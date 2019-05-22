@@ -15,7 +15,6 @@ namespace CinemaTerminal
 {
     public partial class MainForm : Form
     {
-        public string imagePath = @"C:\CinemaTerminal\Posters\Poster_4.jpg";
         private Video video;
         private string[] videoPaths;
         private string folderPath = @"C:\CinemaTerminal\Videos\";
@@ -28,6 +27,18 @@ namespace CinemaTerminal
         public MainForm()
         {
             InitializeComponent();
+
+            setImage(poster01, "Poster_1.jpg");
+            setImage(poster02, "Poster_2.jpg");
+            setImage(poster03, "Poster_3.jpg");
+            setImage(extraPoster01, "Poster_4.jpg");
+            setImage(extraPoster02, "Poster_5.jpg");
+            setImage(extraPoster03, "Poster_6.jpg");
+            setImage(extraPoster04, "Poster_7.jpg");
+            setImage(extraPoster05, "Poster_8.jpg");
+            setImage(extraPoster06, "Poster_9.jpg");
+
+
             roundCorners(extraPoster01);
             roundCorners(extraPoster02);
             roundCorners(extraPoster03);
@@ -137,6 +148,14 @@ namespace CinemaTerminal
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'myDataSet.Film' table. You can move, or remove it, as needed.
+            this.filmTableAdapter.Fill(this.myDataSet.Film);
+            // TODO: This line of code loads data into the 'myDataSet.Film' table. You can move, or remove it, as needed.
+            this.filmTableAdapter.Fill(this.myDataSet.Film);
+            // TODO: This line of code loads data into the 'myDataSet.Film' table. You can move, or remove it, as needed.
+            this.filmTableAdapter.Fill(this.myDataSet.Film);
+            // TODO: This line of code loads data into the 'myDataSet.Film' table. You can move, or remove it, as needed.
+            this.filmTableAdapter.Fill(this.myDataSet.Film);
             formSize = new Size(this.Width, this.Height);
             pnlSize = new Size(VideoPnl.Width, VideoPnl.Height);
 
@@ -154,8 +173,8 @@ namespace CinemaTerminal
 
         private void poster01_Click(object sender, EventArgs e)
         {
+            filmBindingSource.Position = 0;
             SelectVideo(0);
-
         }
 
         private void backIcon_Click(object sender, EventArgs e)
@@ -167,6 +186,7 @@ namespace CinemaTerminal
 
         private void poster03_Click(object sender, EventArgs e)
         {
+            filmBindingSource.Position = 2;
             SelectVideo(2);
         }
 
@@ -190,13 +210,51 @@ namespace CinemaTerminal
 
         private void poster02_Click(object sender, EventArgs e)
         {
+            filmBindingSource.Position = 1;
             SelectVideo(1);
         }
 
-        public void setImage(PictureBox pictureBox)
+        public void setImage(PictureBox pictureBox, string fileName)
         {
-            Bitmap image = new Bitmap(imagePath);
-            pictureBox.Image = Image.FromFile(@"C:\CinemaTerminal\Posters\Poster_4.jpg");
+            string image = @"C:\CinemaTerminal\Posters\";
+            image += fileName;
+            pictureBox.Image = Image.FromFile(image);
+        }
+
+        private void extraPoster01_Click(object sender, EventArgs e)
+        {
+            filmBindingSource.Position = 3;
+            SelectVideo(3);
+        }
+
+        private void extraPoster02_Click(object sender, EventArgs e)
+        {
+            filmBindingSource.Position = 4;
+            SelectVideo(4);
+        }
+
+        private void extraPoster03_Click(object sender, EventArgs e)
+        {
+            filmBindingSource.Position = 5;
+            SelectVideo(5);
+        }
+
+        private void extraPoster04_Click(object sender, EventArgs e)
+        {
+            filmBindingSource.Position = 6;
+            SelectVideo(6);
+        }
+
+        private void extraPoster05_Click(object sender, EventArgs e)
+        {
+            filmBindingSource.Position = 7;
+            SelectVideo(7);
+        }
+
+        private void extraPoster06_Click(object sender, EventArgs e)
+        {
+            filmBindingSource.Position = 8;
+            SelectVideo(8);
         }
     }
 }

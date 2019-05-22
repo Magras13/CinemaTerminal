@@ -36,8 +36,8 @@ namespace CinemaTerminal
             this.Validate();
             this.filmBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.myDataSet);
-            File.Copy(sourceTreillerFile, destinationTreillerFile, true);
-            File.Copy(sourcePosterFile, destinationPosterFile, true);
+            // File.Copy(sourceTreillerFile, destinationTreillerFile, true);
+            //File.Copy(sourcePosterFile, destinationPosterFile, true);
         }
 
 
@@ -49,9 +49,9 @@ namespace CinemaTerminal
 
         private void filmBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.filmBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.myDataSet);
+            Validate();
+            filmBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(myDataSet);
 
         }
 
