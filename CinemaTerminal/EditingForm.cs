@@ -33,11 +33,18 @@ namespace CinemaTerminal
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.filmBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.myDataSet);
-            // File.Copy(sourceTreillerFile, destinationTreillerFile, true);
-            //File.Copy(sourcePosterFile, destinationPosterFile, true);
+            try
+            {
+                this.Validate();
+                this.filmBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.myDataSet);
+                File.Copy(sourceTreillerFile, destinationTreillerFile, true);
+                File.Copy(sourcePosterFile, destinationPosterFile, true);
+            }
+            catch
+            {
+                MessageBox.Show("Заполните все ячейки", "Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
 
 

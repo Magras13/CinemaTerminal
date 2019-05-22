@@ -78,9 +78,9 @@
             nameLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             nameLabel.Location = new System.Drawing.Point(462, 431);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(164, 49);
+            nameLabel.Size = new System.Drawing.Size(239, 49);
             nameLabel.TabIndex = 112;
-            nameLabel.Text = "Name:";
+            nameLabel.Text = "Название";
             // 
             // descriptionLabel
             // 
@@ -88,19 +88,19 @@
             descriptionLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             descriptionLabel.Location = new System.Drawing.Point(462, 556);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(289, 49);
+            descriptionLabel.Size = new System.Drawing.Size(248, 49);
             descriptionLabel.TabIndex = 113;
-            descriptionLabel.Text = "Description:";
+            descriptionLabel.Text = "Описание";
             // 
             // ratingLabel
             // 
             ratingLabel.AutoSize = true;
             ratingLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            ratingLabel.Location = new System.Drawing.Point(553, 668);
+            ratingLabel.Location = new System.Drawing.Point(546, 668);
             ratingLabel.Name = "ratingLabel";
-            ratingLabel.Size = new System.Drawing.Size(179, 49);
+            ratingLabel.Size = new System.Drawing.Size(194, 49);
             ratingLabel.TabIndex = 114;
-            ratingLabel.Text = "Rating:";
+            ratingLabel.Text = "Оценка";
             // 
             // elementLabel1
             // 
@@ -110,7 +110,7 @@
             elementLabel1.Name = "elementLabel1";
             elementLabel1.Size = new System.Drawing.Size(217, 49);
             elementLabel1.TabIndex = 117;
-            elementLabel1.Text = "Element:";
+            elementLabel1.Text = "Элемент";
             // 
             // posterLbl
             // 
@@ -321,10 +321,10 @@
             // 
             this.ratingTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.filmBindingSource, "Rating", true));
             this.ratingTextBox.Font = new System.Drawing.Font("Gotham Pro Medium", 58F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ratingTextBox.Location = new System.Drawing.Point(556, 734);
+            this.ratingTextBox.Location = new System.Drawing.Point(547, 734);
             this.ratingTextBox.Multiline = true;
             this.ratingTextBox.Name = "ratingTextBox";
-            this.ratingTextBox.Size = new System.Drawing.Size(170, 116);
+            this.ratingTextBox.Size = new System.Drawing.Size(190, 116);
             this.ratingTextBox.TabIndex = 115;
             // 
             // addTreilerOFD

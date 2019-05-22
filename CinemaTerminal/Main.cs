@@ -60,17 +60,6 @@ namespace CinemaTerminal
             schedule.Focus();
         }
 
-        public void roundCorners(Control element)
-        {
-            Rectangle rect = new Rectangle(0, 0, element.Width, element.Height);
-            GraphicsPath g = new GraphicsPath();
-            int d = 40;
-            g.AddArc(rect.X, rect.Y, d, d, 180, 90);
-            g.AddArc(rect.X + rect.Width - d, rect.Y, d, d, 270, 90);
-            g.AddArc(rect.X + rect.Width - d, rect.Y + rect.Height - d, d, d, 0, 90);
-            g.AddArc(rect.X, rect.Y + rect.Height - d, d, d, 90, 90);
-            element.Region = new Region(g);
-        }
 
         private void arrowRight_Click(object sender, EventArgs e)
         {
@@ -148,13 +137,6 @@ namespace CinemaTerminal
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'myDataSet.Film' table. You can move, or remove it, as needed.
-            this.filmTableAdapter.Fill(this.myDataSet.Film);
-            // TODO: This line of code loads data into the 'myDataSet.Film' table. You can move, or remove it, as needed.
-            this.filmTableAdapter.Fill(this.myDataSet.Film);
-            // TODO: This line of code loads data into the 'myDataSet.Film' table. You can move, or remove it, as needed.
-            this.filmTableAdapter.Fill(this.myDataSet.Film);
-            // TODO: This line of code loads data into the 'myDataSet.Film' table. You can move, or remove it, as needed.
             this.filmTableAdapter.Fill(this.myDataSet.Film);
             formSize = new Size(this.Width, this.Height);
             pnlSize = new Size(VideoPnl.Width, VideoPnl.Height);
@@ -169,6 +151,10 @@ namespace CinemaTerminal
                     vid = vid.Replace(".wmv", string.Empty);
                 }
             }
+            else
+                MessageBox.Show("Папка пуста или видео не подходящего формата!", 
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void poster01_Click(object sender, EventArgs e)
@@ -190,35 +176,10 @@ namespace CinemaTerminal
             SelectVideo(2);
         }
 
-        public void SelectVideo(int myIndex)
-        {
-            treilerPnl.Visible = true;
-            try
-            {
-                video.Stop();
-                video.Dispose();
-            }
-            catch { }
-
-            int index = myIndex;
-            selectedIndex = index;
-            video = new Video(videoPaths[index], false);
-            video.Owner = VideoPnl;
-            VideoPnl.Size = pnlSize;
-            video.Play();
-        }
-
         private void poster02_Click(object sender, EventArgs e)
         {
             filmBindingSource.Position = 1;
             SelectVideo(1);
-        }
-
-        public void setImage(PictureBox pictureBox, string fileName)
-        {
-            string image = @"C:\CinemaTerminal\Posters\";
-            image += fileName;
-            pictureBox.Image = Image.FromFile(image);
         }
 
         private void extraPoster01_Click(object sender, EventArgs e)
@@ -255,6 +216,52 @@ namespace CinemaTerminal
         {
             filmBindingSource.Position = 8;
             SelectVideo(8);
+        }
+
+
+
+
+
+        public void roundCorners(Control element)
+        {
+            Rectangle rect = new Rectangle(0, 0, element.Width, element.Height);
+            GraphicsPath g = new GraphicsPath();
+            int d = 40;
+            g.AddArc(rect.X, rect.Y, d, d, 180, 90);
+            g.AddArc(rect.X + rect.Width - d, rect.Y, d, d, 270, 90);
+            g.AddArc(rect.X + rect.Width - d, rect.Y + rect.Height - d, d, d, 0, 90);
+            g.AddArc(rect.X, rect.Y + rect.Height - d, d, d, 90, 90);
+            element.Region = new Region(g);
+        }
+        public void SelectVideo(int myIndex)
+        {
+            treilerPnl.Visible = true;
+            try
+            {
+                video.Stop();
+                video.Dispose();
+            }
+            catch { }
+
+            int index = myIndex;
+            selectedIndex = index;
+            video = new Video(videoPaths[index], false);
+            video.Owner = VideoPnl;
+            VideoPnl.Size = pnlSize;
+            video.Play();
+        }
+        public void setImage(PictureBox pictureBox, string fileName)
+        {
+            try
+            {
+                string image = @"C:\CinemaTerminal\Posters\";
+                image += fileName;
+                pictureBox.Image = Image.FromFile(image);
+            }
+            catch
+            {
+                MessageBox.Show("Папка пуста или изображения не подходящего формата!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
