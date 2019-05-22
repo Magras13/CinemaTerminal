@@ -15,6 +15,7 @@ namespace CinemaTerminal
 {
     public partial class MainForm : Form
     {
+        public string imagePath = @"C:\CinemaTerminal\Posters\Poster_4.jpg";
         private Video video;
         private string[] videoPaths;
         private string folderPath = @"C:\CinemaTerminal\Videos\";
@@ -166,7 +167,7 @@ namespace CinemaTerminal
 
         private void poster03_Click(object sender, EventArgs e)
         {
-            SelectVideo(1);
+            SelectVideo(2);
         }
 
         public void SelectVideo(int myIndex)
@@ -187,6 +188,15 @@ namespace CinemaTerminal
             video.Play();
         }
 
-        
+        private void poster02_Click(object sender, EventArgs e)
+        {
+            SelectVideo(1);
+        }
+
+        public void setImage(PictureBox pictureBox)
+        {
+            Bitmap image = new Bitmap(imagePath);
+            pictureBox.Image = Image.FromFile(@"C:\CinemaTerminal\Posters\Poster_4.jpg");
+        }
     }
 }

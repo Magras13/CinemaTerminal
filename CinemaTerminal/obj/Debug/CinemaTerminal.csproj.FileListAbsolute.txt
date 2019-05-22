@@ -110,8 +110,6 @@ C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\bin\Debug\StackBlur.dl
 C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\bin\Debug\System.Drawing.Common.dll
 C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\obj\Debug\CinemaTerminal.exe.config
 C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\obj\Debug\CinemaTerminal.csproj.CopyComplete
-C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\bin\Debug\Microsoft.DirectX.AudioVideoPlayback.dll
-C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\bin\Debug\Microsoft.DirectX.dll
 C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\bin\Debug\Interop.WMPLib.dll
 C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\bin\Debug\Interop.ShockwaveFlashObjects.dll
 C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
@@ -122,3 +120,5 @@ C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\obj\Debug\AxInterop.Sh
 C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\obj\Debug\CinemaTerminal.csproj.ResolveComReference.cache
 C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\obj\Debug\CinemaTerminal.EditingForm.resources
+C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\bin\Debug\Microsoft.DirectX.AudioVideoPlayback.dll
+C:\Users\haysa\source\repos\CinemaTerminal\CinemaTerminal\bin\Debug\Microsoft.DirectX.dll

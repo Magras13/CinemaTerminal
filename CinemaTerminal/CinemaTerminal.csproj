@@ -76,7 +76,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\SqlClass.cs" />
     <Compile Include="EditingForm.cs">
       <SubType>Form</SubType>
     </Compile>

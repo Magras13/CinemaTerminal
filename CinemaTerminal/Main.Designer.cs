@@ -143,6 +143,7 @@
             this.poster02.TabIndex = 12;
             this.poster02.TabStop = false;
             this.poster02.Visible = false;
+            this.poster02.Click += new System.EventHandler(this.poster02_Click);
             // 
             // poster03
             // 

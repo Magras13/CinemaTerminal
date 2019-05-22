@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditingForm));
             System.Windows.Forms.Label elementLabel;
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label ratingLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditingForm));
             this.posterLbl = new System.Windows.Forms.Label();
             this.trailerLbl = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
-            this.editBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.posterAddresBox = new System.Windows.Forms.TextBox();
+            this.treillerAddresBox = new System.Windows.Forms.TextBox();
             this.myDataSet = new CinemaTerminal.MyDataSet();
             this.filmBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.filmTableAdapter = new CinemaTerminal.MyDataSetTableAdapters.FilmTableAdapter();
             this.tableAdapterManager = new CinemaTerminal.MyDataSetTableAdapters.TableAdapterManager();
             this.filmBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.filmBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.elementComboBox = new System.Windows.Forms.ComboBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.descriptionRichTextBox = new System.Windows.Forms.RichTextBox();
             this.ratingTextBox = new System.Windows.Forms.TextBox();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.addTreilerOFD = new System.Windows.Forms.PictureBox();
+            this.addPosterOFD = new System.Windows.Forms.PictureBox();
             elementLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
@@ -71,7 +71,49 @@
             ((System.ComponentModel.ISupportInitialize)(this.filmBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmBindingNavigator)).BeginInit();
             this.filmBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addTreilerOFD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addPosterOFD)).BeginInit();
             this.SuspendLayout();
+            // 
+            // elementLabel
+            // 
+            elementLabel.AutoSize = true;
+            elementLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            elementLabel.Location = new System.Drawing.Point(462, 56);
+            elementLabel.Name = "elementLabel";
+            elementLabel.Size = new System.Drawing.Size(217, 49);
+            elementLabel.TabIndex = 111;
+            elementLabel.Text = "Element:";
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            nameLabel.Location = new System.Drawing.Point(462, 431);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(164, 49);
+            nameLabel.TabIndex = 112;
+            nameLabel.Text = "Name:";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            descriptionLabel.Location = new System.Drawing.Point(462, 556);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(289, 49);
+            descriptionLabel.TabIndex = 113;
+            descriptionLabel.Text = "Description:";
+            // 
+            // ratingLabel
+            // 
+            ratingLabel.AutoSize = true;
+            ratingLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            ratingLabel.Location = new System.Drawing.Point(553, 668);
+            ratingLabel.Name = "ratingLabel";
+            ratingLabel.Size = new System.Drawing.Size(179, 49);
+            ratingLabel.TabIndex = 114;
+            ratingLabel.Text = "Rating:";
             // 
             // posterLbl
             // 
@@ -100,7 +142,7 @@
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Gotham Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(544, 980);
+            this.saveBtn.Location = new System.Drawing.Point(748, 980);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(171, 50);
@@ -109,36 +151,6 @@
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // editBtn
-            // 
-            this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(106)))), ((int)(((byte)(201)))));
-            this.editBtn.FlatAppearance.BorderSize = 0;
-            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editBtn.Font = new System.Drawing.Font("Gotham Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.ForeColor = System.Drawing.Color.White;
-            this.editBtn.Location = new System.Drawing.Point(748, 980);
-            this.editBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(171, 50);
-            this.editBtn.TabIndex = 10;
-            this.editBtn.Text = "Изменить";
-            this.editBtn.UseVisualStyleBackColor = false;
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-            this.deleteBtn.FlatAppearance.BorderSize = 0;
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBtn.Font = new System.Drawing.Font("Gotham Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Location = new System.Drawing.Point(949, 980);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(171, 50);
-            this.deleteBtn.TabIndex = 105;
-            this.deleteBtn.Text = "Удалить";
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            // 
             // cancelBtn
             // 
             this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
@@ -146,7 +158,7 @@
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Gotham Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.Location = new System.Drawing.Point(1152, 980);
+            this.cancelBtn.Location = new System.Drawing.Point(949, 980);
             this.cancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(171, 50);
@@ -155,23 +167,23 @@
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // textBox3
+            // posterAddresBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Gotham Pro Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(933, 318);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(525, 33);
-            this.textBox3.TabIndex = 109;
+            this.posterAddresBox.Font = new System.Drawing.Font("Gotham Pro Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.posterAddresBox.Location = new System.Drawing.Point(933, 318);
+            this.posterAddresBox.Multiline = true;
+            this.posterAddresBox.Name = "posterAddresBox";
+            this.posterAddresBox.Size = new System.Drawing.Size(525, 33);
+            this.posterAddresBox.TabIndex = 109;
             // 
-            // textBox4
+            // treillerAddresBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Gotham Pro Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(933, 194);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(525, 33);
-            this.textBox4.TabIndex = 110;
+            this.treillerAddresBox.Font = new System.Drawing.Font("Gotham Pro Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.treillerAddresBox.Location = new System.Drawing.Point(933, 194);
+            this.treillerAddresBox.Multiline = true;
+            this.treillerAddresBox.Name = "treillerAddresBox";
+            this.treillerAddresBox.Size = new System.Drawing.Size(525, 33);
+            this.treillerAddresBox.TabIndex = 110;
             // 
             // myDataSet
             // 
@@ -224,6 +236,22 @@
             this.filmBindingNavigator.TabIndex = 111;
             this.filmBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -256,16 +284,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -288,26 +309,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // filmBindingNavigatorSaveItem
             // 
@@ -317,16 +320,6 @@
             this.filmBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.filmBindingNavigatorSaveItem.Text = "Save Data";
             this.filmBindingNavigatorSaveItem.Click += new System.EventHandler(this.filmBindingNavigatorSaveItem_Click);
-            // 
-            // elementLabel
-            // 
-            elementLabel.AutoSize = true;
-            elementLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            elementLabel.Location = new System.Drawing.Point(462, 56);
-            elementLabel.Name = "elementLabel";
-            elementLabel.Size = new System.Drawing.Size(217, 49);
-            elementLabel.TabIndex = 111;
-            elementLabel.Text = "Element:";
             // 
             // elementComboBox
             // 
@@ -338,16 +331,6 @@
             this.elementComboBox.Size = new System.Drawing.Size(525, 38);
             this.elementComboBox.TabIndex = 112;
             // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            nameLabel.Location = new System.Drawing.Point(462, 431);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(164, 49);
-            nameLabel.TabIndex = 112;
-            nameLabel.Text = "Name:";
-            // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.filmBindingSource, "Name", true));
@@ -357,16 +340,6 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(525, 33);
             this.nameTextBox.TabIndex = 113;
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            descriptionLabel.Location = new System.Drawing.Point(462, 556);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(289, 49);
-            descriptionLabel.TabIndex = 113;
-            descriptionLabel.Text = "Description:";
             // 
             // descriptionRichTextBox
             // 
@@ -378,16 +351,6 @@
             this.descriptionRichTextBox.TabIndex = 114;
             this.descriptionRichTextBox.Text = "";
             // 
-            // ratingLabel
-            // 
-            ratingLabel.AutoSize = true;
-            ratingLabel.Font = new System.Drawing.Font("Gotham Pro Medium", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            ratingLabel.Location = new System.Drawing.Point(553, 668);
-            ratingLabel.Name = "ratingLabel";
-            ratingLabel.Size = new System.Drawing.Size(179, 49);
-            ratingLabel.TabIndex = 114;
-            ratingLabel.Text = "Rating:";
-            // 
             // ratingTextBox
             // 
             this.ratingTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.filmBindingSource, "Rating", true));
@@ -398,11 +361,47 @@
             this.ratingTextBox.Size = new System.Drawing.Size(170, 116);
             this.ratingTextBox.TabIndex = 115;
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Enabled = false;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // addTreilerOFD
+            // 
+            this.addTreilerOFD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addTreilerOFD.Image = ((System.Drawing.Image)(resources.GetObject("addTreilerOFD.Image")));
+            this.addTreilerOFD.Location = new System.Drawing.Point(1457, 194);
+            this.addTreilerOFD.Name = "addTreilerOFD";
+            this.addTreilerOFD.Size = new System.Drawing.Size(35, 34);
+            this.addTreilerOFD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.addTreilerOFD.TabIndex = 116;
+            this.addTreilerOFD.TabStop = false;
+            this.addTreilerOFD.Click += new System.EventHandler(this.addTreilerOFD_Click);
+            // 
+            // addPosterOFD
+            // 
+            this.addPosterOFD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addPosterOFD.Image = ((System.Drawing.Image)(resources.GetObject("addPosterOFD.Image")));
+            this.addPosterOFD.Location = new System.Drawing.Point(1457, 318);
+            this.addPosterOFD.Name = "addPosterOFD";
+            this.addPosterOFD.Size = new System.Drawing.Size(35, 34);
+            this.addPosterOFD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.addPosterOFD.TabIndex = 117;
+            this.addPosterOFD.TabStop = false;
+            this.addPosterOFD.Click += new System.EventHandler(this.addPosterOFD_Click);
+            // 
             // EditingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.addPosterOFD);
+            this.Controls.Add(this.addTreilerOFD);
             this.Controls.Add(ratingLabel);
             this.Controls.Add(this.ratingTextBox);
             this.Controls.Add(descriptionLabel);
@@ -412,11 +411,9 @@
             this.Controls.Add(elementLabel);
             this.Controls.Add(this.elementComboBox);
             this.Controls.Add(this.filmBindingNavigator);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.treillerAddresBox);
+            this.Controls.Add(this.posterAddresBox);
             this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.deleteBtn);
-            this.Controls.Add(this.editBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.trailerLbl);
             this.Controls.Add(this.posterLbl);
@@ -430,6 +427,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.filmBindingNavigator)).EndInit();
             this.filmBindingNavigator.ResumeLayout(false);
             this.filmBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addTreilerOFD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addPosterOFD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,17 +438,14 @@
         private System.Windows.Forms.Label posterLbl;
         private System.Windows.Forms.Label trailerLbl;
         private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.Button editBtn;
-        private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox posterAddresBox;
+        private System.Windows.Forms.TextBox treillerAddresBox;
         private MyDataSet myDataSet;
         private System.Windows.Forms.BindingSource filmBindingSource;
         private MyDataSetTableAdapters.FilmTableAdapter filmTableAdapter;
         private MyDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator filmBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -465,5 +461,8 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.RichTextBox descriptionRichTextBox;
         private System.Windows.Forms.TextBox ratingTextBox;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.PictureBox addTreilerOFD;
+        private System.Windows.Forms.PictureBox addPosterOFD;
     }
 }
